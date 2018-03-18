@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
     categories.each do |category_id|
       category = Category.find_by(id: category_id)
       @article.categories << category
-    end
+   end
   end
 
   def article_params

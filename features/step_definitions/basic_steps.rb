@@ -18,6 +18,16 @@ Given("I am on the {string} page") do |page_name|
   visit page_path(page_name)
 end
 
+Given("the following categories exist") do |table|
+  table.hashes.each do |category|
+    create(:category, category)
+  end
+end
+
+When("I select {string} from {string}") do |subject, category|
+  select(subject, from: category)
+end
+
 Given("I am on the {string} article page") do |article_title|
   visit find_article(article_title)
 end

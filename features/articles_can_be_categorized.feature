@@ -5,8 +5,8 @@ Feature: Article can be linked to a category
 
   Background:
     Given the following categories exist
-      | subject |
-      | Fashion |
+    | subject   |
+    | Fashion   |
 
   Scenario: User can categorize an article
     Given I am on the "Create Article" page
@@ -19,10 +19,9 @@ Feature: Article can be linked to a category
     Then I am on the "Index" page
     And I should see "Fashion"
 
-
   Scenario: User tries to create article without assigning it to a catagory
     Given I am on the "Create Article" page
     When I fill in "Title" with "Holger is the best"
     And I fill in "Content" with "Dreamteam for the win!"
-    When I click on "Create Article"
+    And I click on "Create Article"
     Then I should see "Categories can't be blank"
